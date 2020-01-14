@@ -36,7 +36,7 @@ app.get('/downloadmp3', (req,res) => {
 		filter: 'audioonly'
 	}).pipe(res);
 });
- app.get('/downloadimage', (req,res) => {
+ app.get('/downloadimg', (req,res) => {
 
 	const file = fs.createWriteStream("file.jpg");
 	const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
