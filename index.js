@@ -5,6 +5,7 @@ const fs = require('fs');
 const youtubedl = require('youtube-dl');
 const path = require('path');
 const app = express();
+const http = require('http');
 const port = process.env.PORT || 3000;
 
 var file_name;
@@ -35,23 +36,13 @@ app.get('/downloadmp3', (req,res) => {
 		filter: 'audioonly'
 	}).pipe(res);
 });
-// app.get('/downloadmp4', (req,res) => {
-	// var url = req.query.url;
-	// const video = youtubedl(url,
-	  // // Optional arguments passed to youtube-dl.
-	  // ['--format=18'],
-	  // // Additional options can be given for calling `child_process.execFile()`.
-	  // { cwd: __dirname });
-	 
-	// // Will be called when the download starts.
-	// video.on('info', function(info) {
-	  // console.log('Download started')
-	  // console.log('filename: ' + info._filename)
-	  // console.log('size: ' + info.size)
-	// });
-	 
-	// video.pipe(fs.createWriteStream('myvideo.mp4'))
-// });
+ app.get('/downloadimage', (req,res) => {
+
+	const file = fs.createWriteStream("file.jpg");
+	const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
+	  response.pipe(file);
+	});
+ });
 
 app.get('/downloadmp4', (req,res) => {
 	var url = req.query.url;
