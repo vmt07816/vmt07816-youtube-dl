@@ -59,5 +59,7 @@ app.get('/downloadmp4', (req,res) => {
 	  console.log('size: ' + info.size)
 	})
 	 
-	video.pipe(fs.createWriteStream('myvideo.mp4'))
+	//video.pipe(fs.createWriteStream('myvideo.mp4'))
+	//.pipe(res);
+	video.pipe(res);
 });
