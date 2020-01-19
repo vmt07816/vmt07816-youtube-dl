@@ -57,6 +57,10 @@ app.get('/downloadmp4', (req,res) => {
 	  console.log('Download started')
 	  console.log('filename: ' + info._filename)
 	  console.log('size: ' + info.size)
+	  res.set({
+        'Content-Length':  info.size,
+        'Content-Disposition': 'attachment; filename=' + `"${info._filename}.mp4"`
+      });
 	})
 	 
 	//video.pipe(fs.createWriteStream('myvideo.mp4'))
