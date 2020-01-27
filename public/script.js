@@ -1,14 +1,14 @@
-var mp3Btn = document.getElementById('mp3');
+// var mp3Btn = document.getElementById('mp3');
 var	mp4Btn = document.getElementById('mp4');
 var	imgBtn = document.getElementById('image');
 // var URLinput = document.querySelector('.URL-input');
 var URLinput = document.getElementById('input_url');
 // var server = '';
 
-mp3Btn.addEventListener('click', () => {
-	console.log(`URL: ${URLinput.value}`);
-	redirectMp3(URLinput.value);
-});
+// mp3Btn.addEventListener('click', () => {
+// 	console.log(`URL: ${URLinput.value}`);
+// 	redirectMp3(URLinput.value);
+// });
 
 
 mp4Btn.addEventListener('click', () => {
