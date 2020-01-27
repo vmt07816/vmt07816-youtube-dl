@@ -1,12 +1,15 @@
 * {
 	text-align: center;
+	background-color: #faf9f7;
 }
 
 .heading {
 	font-family: Arial;
 	margin-top:40vh;
 }
-
+.row {
+	background-color: rgba(0,0,0,.5);
+}
 .col-1 {
     padding-left: 0px;
 }
